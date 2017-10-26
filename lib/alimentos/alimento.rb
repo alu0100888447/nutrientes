@@ -7,6 +7,10 @@ class Alimento
     @lipidos = lipidos
   end
 
+  def valorNutricional
+    valor = (@proteinas * 4) + (@glucidos * 4) + (@lipidos * 9)
+  end
+
   def to_s
     alimento =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
   end
