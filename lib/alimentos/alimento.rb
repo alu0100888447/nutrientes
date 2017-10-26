@@ -8,6 +8,6 @@ class Alimento
   end
 
   def to_s
-    s =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
+    alimento =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
   end
 end
