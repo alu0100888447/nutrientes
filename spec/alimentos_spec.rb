@@ -30,4 +30,10 @@ RSpec.describe Alimentos do
     end
   end
 
+  describe "# Calculo del valor nutricional" do
+    it "Valor nutricional correcto" do
+      expect(@huevoFrito.valorNutricional).to eq(231.9)
+    end
+  end
+
 end
