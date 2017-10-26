@@ -7,4 +7,8 @@ RSpec.describe Alimentos do
   before :each do
     @huevoFrito = Alimento.new("Huevo Frito", 14.1, 0.0, 19.5)
   end
+
+  it "El alimento tiene nombre" do
+    expect(@huevoFrito.nombre).not_to be nil
+  end
 end
