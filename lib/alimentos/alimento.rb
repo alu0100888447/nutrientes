@@ -7,4 +7,7 @@ class Alimento
     @lipidos = lipidos
   end
 
+  def to_s
+    s =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
+  end
 end
