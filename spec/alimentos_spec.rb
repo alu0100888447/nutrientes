@@ -19,4 +19,8 @@ RSpec.describe Alimentos do
   it "El alimento tiene glucidos?" do
     expect(@huevoFrito.glucidos).not_to be nil
   end
+
+  it "El alimento tiene lipidos?" do
+    expect(@huevoFrito.lipidos).not_to be nil
+  end
 end
