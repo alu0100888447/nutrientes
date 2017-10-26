@@ -6,4 +6,5 @@ class Alimento
     @glucidos = glucidos
     @lipidos = lipidos
   end
+
 end

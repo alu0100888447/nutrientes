@@ -23,4 +23,8 @@ RSpec.describe Alimentos do
   it "El alimento tiene lipidos?" do
     expect(@huevoFrito.lipidos).not_to be nil
   end
+
+  it "Los datos del alimento son los correctos?" do
+    expect(@huevoFrito.to_s).to eq("Huevo Frito | 14.1 | 0.0 | 19.5")
+  end
 end
