@@ -1,9 +1,12 @@
 require "spec_helper"
 require "./lib/alimentos/alimento"
 require "./lib/alimentos/lista"
+
 RSpec.describe Alimentos do
 
   before :all do
+
+    # Creacion de los alimentos
     @huevoFrito = Alimento.new("Huevo Frito", 14.1, 0.0, 19.5)
     @lecheVaca = Alimento.new("Leche Vaca", 3.3, 4.8, 3.2)
     @yogurt = Alimento.new("Yogurt", 3.8, 4.9, 3.8)
@@ -24,9 +27,45 @@ RSpec.describe Alimentos do
     @manzana = Alimento.new("Manzana", 0.3, 12.4, 0.4)
     @platanos = Alimento.new("Platanos", 1.2, 21.4, 0.2)
 
-    @lista = Lista.new()
+    # Creacion de los grupos de Alimentos
+    # Huevos, Lacteos y Helados
+    @huevoFritoG = GAlimento.new("Huevos, Lacteos y Helados", "Huevo Frito", 14.1, 0.0, 19.5)
+    @lecheVacaG = GAlimento.new("Huevos, Lacteos y Helados", "Leche Vaca", 3.3, 4.8, 3.2)
+    @yogurtG = GAlimento.new("Huevos, Lacteos y Helados", "Yogurt", 3.8, 4.9, 3.8)
 
-    @g1 = GAlimento.new("Huevos, Lacteos y Helados", @huevoFrito, @lecheVaca, @yogurt)
+    # Carnes y derivados
+    @cerdoG = GAlimento.new("Carnes y derivados", "Cerdo", 21.5, 0.0, 6.3)
+    @terneraG = GAlimento.new("Carnes y derivados", "Ternera", 21.1, 0.0, 3.1)
+    @polloG = GAlimento.new("Carnes y derivados", "Pollo", 20.6, 0.0, 5.6)
+
+    # Pescados y mariscos
+    @bacalaoG = GAlimento.new("Pescados y mariscos", "Bacalao", 17.7, 0.0, 0.4)
+    @atunG = GAlimento.new("Pescados y mariscos", "Atun", 21.5, 0.0, 15.5)
+    @salmonG = GAlimento.new("Pescados y mariscos", "Salmon", 19.9, 0.0, 13.6)
+
+    # Alimentos grasos
+    @aceiteOlivaG = GAlimento.new("Alimentos grasos", "Aceite de Oliva", 0.0, 0.2, 99.6)
+    @mantequillaG = GAlimento.new("Alimentos grasos", "Mantequilla", 0.7, 0.0, 83.2)
+    @chocolateG = GAlimento.new("Alimentos grasos", "Chocolate", 5.3, 47.0, 30.0)
+
+    # Alimentos ricos en carbohidratos
+    @azucarG = GAlimento.new("Alimentos ricos en carbohidratos", "Azucar", 0.0, 99.8, 0.0)
+    @arrozG = GAlimento.new("Alimentos ricos en carbohidratos", "Arroz", 6.8, 77.7, 0.6)
+    @lentejasG = GAlimento.new("Alimentos ricos en carbohidratos", "Lentejas", 23.5, 52.0, 1.4)
+    @papasG = GAlimento.new("Alimentos ricos en carbohidratos", "Papas", 2.0, 15.4, 0.1)
+
+    # Verduras y Hortalizas
+    @tomateG = GAlimento.new("Verduras y Hortalizas", "Tomate", 1.0, 3.5, 0.2)
+    @cebollaG = GAlimento.new("Verduras y Hortalizas", "Cebolla", 1.3, 5.8, 0.3)
+    @calabazaG = GAlimento.new("Verduras y Hortalizas", "Calabaza", 1.1, 4.8, 0.1)
+
+    # Frutas
+    @manzanaG = GAlimento.new("Frutas", "Manzana", 0.3, 12.4, 0.4)
+    @platanosG = GAlimento.new("Frutas", "Platanos", 1.2, 21.4, 0.2)
+    @perasG = GAlimento.new("Frutas", "Peras", 0.5, 12.7, 0.3)
+
+    # Creacion de la Lista
+    @lista = Lista.new()
 
   end
 
@@ -117,8 +156,6 @@ RSpec.describe Alimentos do
   describe "# Pruebas push" do
     it "Push" do
       expect(@lista.push(@huevo)).to eq(1)
-    end
-    it "Push" do
       expect(@lista.push(@platanos)).to eq(2)
     end
   end

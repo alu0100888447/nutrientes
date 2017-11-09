@@ -15,3 +15,12 @@ class Alimento
     alimento =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
   end
 end
+
+class GAlimento < Alimento
+  attr_reader :nombreG
+
+  def initialize (nombreG, nombreA, proteinas, glucidos, lipidos)
+    super(nombreA, proteinas, glucidos, lipidos)
+    @nombreG = nombreG
+  end
+end
