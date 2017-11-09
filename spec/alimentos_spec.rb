@@ -26,6 +26,8 @@ RSpec.describe Alimentos do
 
     @lista = Lista.new()
 
+    @g1 = GAlimento.new("Huevos, Lacteos y Helados", @huevoFrito, @lecheVaca, @yogurt)
+
   end
 
   describe "# Almacenamiento de los datos" do
