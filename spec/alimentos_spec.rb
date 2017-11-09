@@ -24,7 +24,6 @@ RSpec.describe Alimentos do
     @manzana = Alimento.new("Manzana", 0.3, 12.4, 0.4)
     @platanos = Alimento.new("Platanos", 1.2, 21.4, 0.2)
 
-
     @lista = Lista.new()
 
   end
@@ -110,6 +109,12 @@ RSpec.describe Alimentos do
     end
     it "Valor nutricional Platanos" do
       expect(@platanos.valorNutricional).to eq(92.19999999999999)
+    end
+  end
+
+  describe "Pruebas push" do
+    it "Push" do
+      expect(@lista.push(@huevo)).to eq(1)
     end
   end
 
