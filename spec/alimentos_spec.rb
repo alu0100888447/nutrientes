@@ -153,6 +153,28 @@ RSpec.describe Alimentos do
     end
   end
 
+  describe "# Pruebas de clase, tipo y jerarquia" do
+    it "Prueba Clases con @huevoFrito y @huevoFritoG" do
+      expect(@huevoFritoG.class).to eq(GAlimento)
+      expect(@huevoFrito.class).to eq(Alimento)
+      expect(@huevoFritoG.instance_of?GAlimento).to eq(true)
+      expect(@huevoFritoG.instance_of?Alimento).to eq(false)
+    end
+    it "Prueba tipo de objeto @manzana y @manzanaG" do
+      expect(@manzanaG.respond_to?:valorNutricional).to eq(true)
+      expect(@manzanaG.respond_to?:to_s).to eq(true)
+      expect(@manzana.respond_to?:valorNutricional).to eq(true)
+    end
+    it "Prueba de jerarquia con @atun y @atunG" do
+      expect(@atunG.is_a?GAlimento).to eq(true)
+      expect(@atun.is_a?Alimento).to eq(true)
+      expect(@atunG.is_a?Alimento).to eq(true)
+      expect(@atun.is_a?GAlimento).to eq(false)
+      expect(@atunG.is_a?Object).to eq(true)
+      expect(@atun.is_a?Object).to eq(true)
+    end
+  end
+
   describe "# Pruebas push" do
     it "Push" do
       expect(@lista.push(@huevo)).to eq(1)
