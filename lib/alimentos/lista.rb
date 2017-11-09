@@ -46,4 +46,19 @@ class Lista
     aux.valor
   end
 
+  def to_s
+    i = 0
+    nodo = Node.new(nil,nil,nil)
+    nodo = @tail
+    while i != @size
+      puts "#{nodo.value}"
+      if nodo.next.next == nil
+        puts "#{nodo.next.value}"
+        i = @size
+      else
+        nodo = nodo.next
+      end
+    end
+  end
+  
 end
