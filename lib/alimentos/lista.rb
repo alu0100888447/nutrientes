@@ -24,4 +24,26 @@ class Lista
     @size += 1
   end
 
+  def pop_head ()
+    aux = @head
+    @head = @head.prev
+    if @head != nil
+      @head.next = nil
+    else
+      @tail = nil
+    end
+    aux.valor
+  end
+
+  def pop_tail ()
+    aux = @tail
+    @tail = @tail.next
+    if @tail != nil
+      @tail.prev = nil
+    else
+      @head = nil
+    end
+    aux.valor
+  end
+
 end

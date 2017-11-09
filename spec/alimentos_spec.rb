@@ -112,14 +112,23 @@ RSpec.describe Alimentos do
     end
   end
 
-  describe "Pruebas push" do
+  describe "# Pruebas push" do
     it "Push" do
       expect(@lista.push(@huevo)).to eq(1)
     end
+    it "Push" do
+      expect(@lista.push(@platanos)).to eq(2)
+    end
   end
-  describe "Pruebas pop_head" do
+  describe "# Pruebas pop_head" do
     it "Pop_head" do
-      expect(@lista.pop_head).to eq(@huevo)
+      expect(@lista.pop_head).to eq(@platanos)
+    end
+  end
+
+  describe "# Pruebas pop_tail" do
+    it "Pop_tail" do
+      expect(@lista.pop_tail).to eq(@huevo)
     end
   end
 
