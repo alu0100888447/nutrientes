@@ -1,5 +1,6 @@
 require "spec_helper"
 require "./lib/alimentos/alimento"
+require "./lib/alimentos/lista"
 RSpec.describe Alimentos do
 
   before :all do
@@ -22,6 +23,10 @@ RSpec.describe Alimentos do
     @cebolla = Alimento.new("Cebolla", 1.3, 5.8, 0.3)
     @manzana = Alimento.new("Manzana", 0.3, 12.4, 0.4)
     @platanos = Alimento.new("Platanos", 1.2, 21.4, 0.2)
+
+
+    @lista = Lista.new()
+
   end
 
   describe "# Almacenamiento de los datos" do
