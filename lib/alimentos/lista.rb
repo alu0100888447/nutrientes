@@ -62,4 +62,12 @@ class Lista
     end
   end
 
+  def each
+    i = @tail
+    while i != nil
+      yield i.valor
+      i = i.next
+    end
+  end
+
 end

@@ -204,7 +204,10 @@ RSpec.describe Alimentos do
 
   describe "# Pruebas Enumerable" do
     it "Prueba max" do
-      expect(@list.max).to eq(@huevoFrito)
+      expect(@lista.max).to eq(@atun)
+    end
+    it "Prueba min" do
+      expect(@lista.min).to eq(@lecheVaca)
     end
   end
 
