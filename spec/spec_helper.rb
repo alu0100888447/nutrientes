@@ -1,5 +1,7 @@
 require "bundler/setup"
 require "alimentos"
+require "./lib/alimentos/alimento"
+require "./lib/alimentos/lista"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

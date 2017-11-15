@@ -1,6 +1,4 @@
 require "spec_helper"
-require "./lib/alimentos/alimento"
-require "./lib/alimentos/lista"
 
 RSpec.describe Alimentos do
 
