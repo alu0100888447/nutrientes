@@ -24,6 +24,19 @@ class Alimento
       false
     end
   end
+
+  def <=>(objeto)
+    return nil unless objeto.is_a?Alimento
+    if valorNutricional == objeto.valorNutricional
+      return 0
+    else
+      if valorNutricional < objeto.valorNutricional
+        return -1
+      else
+        return 1
+      end
+    end
+  end
 end
 class GAlimento < Alimento
   attr_reader :nombreG

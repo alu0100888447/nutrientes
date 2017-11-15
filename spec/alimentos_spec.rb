@@ -177,8 +177,8 @@ RSpec.describe Alimentos do
     it "Prueba == true" do
       expect(@huevoFrito==@huevoFrito).to eq(true)
     end
-    it "Prueba <=> true" do
-      expect(@huevoFrito<=>@atun).to eq(true)
+    it "Prueba <=> 1" do
+      expect(@huevoFrito<=>@atun).to eq(1)
     end
   end
 
