@@ -1,5 +1,7 @@
 class Alimento
+  include Comparable
   attr_reader :nombre, :proteinas, :glucidos, :lipidos
+
   def initialize (nombre, proteinas, glucidos, lipidos)
     @nombre = nombre
     @proteinas = proteinas
@@ -14,8 +16,15 @@ class Alimento
   def to_s
     alimento =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
   end
-end
 
+  def ==(objeto)
+    if objeto.is_a?Alimento
+      valorNutricional == objeto.valorNutricional
+    else
+      false
+    end
+  end
+end
 class GAlimento < Alimento
   attr_reader :nombreG
 

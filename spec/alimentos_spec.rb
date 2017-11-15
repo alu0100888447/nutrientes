@@ -173,8 +173,10 @@ RSpec.describe Alimentos do
     end
   end
 
-  describe "Pruebas Comparable" do
-    expect(@huevoFrito == @huevoFrito).to eq(true)
+  describe "# Pruebas Comparable" do
+    it "Prueba == true" do
+      expect(@huevoFrito==@huevoFrito).to eq(true)
+    end
   end
 
   describe "# Pruebas push" do
