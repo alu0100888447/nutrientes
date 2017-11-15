@@ -1,6 +1,7 @@
 Node = Struct.new(:valor, :next, :prev)
 
 class Lista
+  include Enumerable
   attr_reader :head, :tail, :size
 
   def initialize()

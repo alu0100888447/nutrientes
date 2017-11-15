@@ -64,7 +64,15 @@ RSpec.describe Alimentos do
 
     # Creacion de la Lista
     @lista = Lista.new()
-
+    @lista.push(@huevoFrito)
+    @lista.push(@lecheVaca)
+    @lista.push(@yogurt)
+    @lista.push(@cerdo)
+    @lista.push(@ternera)
+    @lista.push(@pollo)
+    @lista.push(@bacalao)
+    @lista.push(@atun)
+    @lista.push(@salmon)
   end
 
   describe "# Almacenamiento de los datos" do
@@ -182,22 +190,23 @@ RSpec.describe Alimentos do
     end
   end
 
-  describe "# Pruebas push" do
-    it "Push" do
-      expect(@lista.push(@huevo)).to eq(1)
-      expect(@lista.push(@platanos)).to eq(2)
-    end
-  end
   describe "# Pruebas pop_head" do
     it "Pop_head" do
-      expect(@lista.pop_head).to eq(@platanos)
+      expect(@lista.pop_head).to eq(@salmon)
     end
   end
 
   describe "# Pruebas pop_tail" do
     it "Pop_tail" do
-      expect(@lista.pop_tail).to eq(@huevo)
+      expect(@lista.pop_tail).to eq(@huevoFrito)
     end
   end
+
+  describe "# Pruebas Enumerable" do
+    it "Prueba max" do
+      expect(@list.max).to eq(@huevoFrito)
+    end
+  end
+
 
 end
