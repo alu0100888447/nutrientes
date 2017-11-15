@@ -1,15 +1,24 @@
+# encoding: utf-8
+# Author::    Imar Abreu Diaz
+# Copyright:: Cretive Commons
+# License::   Distributes under the same terms as Ruby
+
 Node = Struct.new(:valor, :next, :prev)
 
+# Esta clase permite representar una lista doblemente enlazada.
+# Se han incluido el mixin Enumerable.
 class Lista
   include Enumerable
   attr_reader :head, :tail, :size
 
+  # Se inicializa la lista vacia.
   def initialize()
     @head = Node.new(nil, nil, nil)
     @tail = Node.new(nil, nil, nil)
     @size = 0
   end
 
+  # Introduce un objeto en la lista por el head.
   def push (valor)
     if (@size == 0)
       nodo = Node.new(valor, nil, nil)
@@ -25,6 +34,7 @@ class Lista
     @size += 1
   end
 
+  # Saca un objeto de la lista por el head.
   def pop_head ()
     aux = @head
     @head = @head.prev
@@ -36,6 +46,7 @@ class Lista
     aux.valor
   end
 
+  # Saca un objeto de la lista por el tail.
   def pop_tail ()
     aux = @tail
     @tail = @tail.next
@@ -47,6 +58,7 @@ class Lista
     aux.valor
   end
 
+  # Formateo de salida.
   def to_s
     i = 0
     nodo = Node.new(nil,nil,nil)
@@ -62,6 +74,8 @@ class Lista
     end
   end
 
+  # Se incluye el metodo del mixin Enumerable
+  # Se define como una iteración sobre los valores de la lista.
   def each
     i = @tail
     while i != nil
