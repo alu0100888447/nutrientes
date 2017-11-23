@@ -24,6 +24,7 @@ RSpec.describe Alimentos do
     @cebolla = Alimento.new("Cebolla", 1.3, 5.8, 0.3)
     @manzana = Alimento.new("Manzana", 0.3, 12.4, 0.4)
     @platanos = Alimento.new("Platanos", 1.2, 21.4, 0.2)
+    @compota = Alimento.new("Compota", 1.3, 24.5, 0.0)
 
     # Creacion de los grupos de Alimentos
     # Huevos, Lacteos y Helados
@@ -187,6 +188,14 @@ RSpec.describe Alimentos do
     end
     it "Prueba <=> 1" do
       expect(@huevoFrito<=>@atun).to eq(1)
+    end
+  end
+
+  describe "# Prueba de Indice Glucemico" do
+    it "Se comprueba el IG para la compota "do
+      compota = [[6.9, 6.9, 6.9, 6.7, 6.9, 7.3, 7.0, 7.0, 7.2, 7.1, 6.8, 7.2, 7.3, 7.0, 6.8, 6.7, 6.8, 6.7, 6.9, 6.7, 6.5, 6.8, 6.9, 7.0, 7.1], [4.6, 4.8, 5.3, 5.6, 6.1, 6.5, 6.6, 7.0, 7.0, 6.8, 6.4, 6.3, 6.1, 6.1, 6.2, 6.0, 6.1, 6.1, 6.2, 6.3, 6.4, 6.1, 6.1, 5.7, 5.9]]
+      glucosa = [[4.9, 5.3, 5.9, 6.7, 7.2, 7.6, 8.0, 8.2, 8.2, 8.4, 8.3, 8.3, 8.0, 7.5, 7.1, 6.8, 6.8, 6.9, 6.8, 6.3, 6.2, 6.3, 6.2, 6.3, 6.1], [6.3, 5.4, 5.6, 5.7, 6.5, 7.4, 7.9, 7.4, 7.7, 7.9, 7.9, 7.8, 7.8, 7.8, 8.0, 8.5, 9.4, 10.8, 10.5, 9.1, 8.9, 8.3, 7.7, 7.6, 7.5]]
+      expect(@Compota.i_glucemico(compota, glucosa)).to eq(49.61696757707774)
     end
   end
 
