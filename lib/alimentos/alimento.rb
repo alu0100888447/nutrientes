@@ -23,6 +23,29 @@ class Alimento
     valor = (@proteinas * 4) + (@glucidos * 4) + (@lipidos * 9)
   end
 
+  # Realiza el calculo del indice glucemico de un alimento.
+  def i_glucemico (alimento, glucosa)
+    si = [], []
+    gl = [], []
+    aibc = [], []
+    aibcg = [], []
+    igind = []
+    alimento.each_with_index do | val, index |
+      alimento[index].each_with_index do | val, index1 |
+        if index1 > 0
+            si[index] << (((alimento[index][index1] - alimento[index][0]) + (alimento[index][index1 - 1] - alimento[index][0])) * 5)/2
+            gl[index] << (((glucosa[index][index1] - glucosa[index][0]) + (glucosa[index][index1 - 1] - glucosa[index][0])) * 5)/2
+        end
+      end
+      aibc[index] = si[index].reduce(:+)
+      aibcg[index] = gl[index].reduce(:+)
+    end
+    aibc.each_with_index do | val, index |
+      igind << (aibc[index]/aibcg[index]) * 100
+    end
+    ig = igind.reduce(:+)/2
+  end
+
   # Formateo de salida.
   def to_s
     alimento =  "#{@nombre} | #{@proteinas} | #{@glucidos} | #{lipidos}"
