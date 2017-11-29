@@ -246,6 +246,12 @@ RSpec.describe Alimentos do
         @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
         @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
     end
+    it "Prueba each" do
+      expect(@array.ordenarEach).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
+        @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
+        @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
+        @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
+    end
   end
 
 
