@@ -27,8 +27,8 @@ class Alimento
   def i_glucemico (alimento, glucosa)
     si = [], []
     gl = [], []
-    aibc = [], []
-    aibcg = [], []
+    aibc = []
+    aibcg = []
     igind = []
     alimento.each_with_index do | val, index |
       alimento[index].each_with_index do | val, index1 |
@@ -37,8 +37,8 @@ class Alimento
             gl[index] << (((glucosa[index][index1] - glucosa[index][0]) + (glucosa[index][index1 - 1] - glucosa[index][0])) * 5)/2
         end
       end
-      aibc[index] = si[index].reduce(:+)
-      aibcg[index] = gl[index].reduce(:+)
+      aibc << si[index].reduce(:+)
+      aibcg << gl[index].reduce(:+)
     end
     aibc.each_with_index do | val, index |
       igind << (aibc[index]/aibcg[index]) * 100

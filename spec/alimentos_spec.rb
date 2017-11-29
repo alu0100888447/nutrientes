@@ -2,7 +2,7 @@ require "spec_helper"
 
 RSpec.describe Alimentos do
 
-  before :all do
+  before :each do
 
     # Creacion de los alimentos
     @huevoFrito = Alimento.new("Huevo Frito", 14.1, 0.0, 19.5)
@@ -74,6 +74,10 @@ RSpec.describe Alimentos do
     @lista.push(@bacalao)
     @lista.push(@atun)
     @lista.push(@salmon)
+
+    # Creacion del vector
+    @array = [@huevoFritoG, @lecheVacaG, @yogurtG, @cerdoG, @terneraG, @polloG, @bacalaoG, @atunG, @salmonG, @aceiteOlivaG, @mantequillaG, @chocolateG, @azucarG, @arrozG, @lentejasG, @papasG, @tomateG, @cebollaG, @calabazaG, @manzanaG, @platanosG, @perasG]
+
   end
 
   describe "# Almacenamiento de los datos" do
@@ -213,10 +217,16 @@ RSpec.describe Alimentos do
 
   describe "# Pruebas Enumerable" do
     it "Prueba max" do
-      expect(@lista.max).to eq(@atun)
+      expect(@lista.max).to eq(@huevoFrito)
     end
     it "Prueba min" do
       expect(@lista.min).to eq(@lecheVaca)
+    end
+  end
+
+  describe "# Pruebas ordenacion" do
+    it "Prueba sort" do
+      expect(@array.sort).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG, @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG, @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG, @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
     end
   end
 
