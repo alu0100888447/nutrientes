@@ -241,7 +241,7 @@ RSpec.describe Alimentos do
         @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
     end
     it "Prueba for" do
-      expect(@array.ordenarFor).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG, 
+      expect(@array.ordenarFor).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
         @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
         @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
         @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])

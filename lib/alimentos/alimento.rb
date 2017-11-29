@@ -92,3 +92,18 @@ class GAlimento < Alimento
     @nombreG = nombreG
   end
 end
+
+class Array
+  def ordenarFor
+    for i in 1..self.length - 1
+      for j in (self.length - 1).downto(i)
+        if (self[j] <=> self[j - 1]) == -1
+          x = self[j - 1]
+          self[j - 1] = self[j]
+          self[j] = x
+        end
+      end
+    end
+    self
+  end
+end
