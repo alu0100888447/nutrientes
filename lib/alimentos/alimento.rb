@@ -98,7 +98,7 @@ class Array
   def ordenarFor
     for i in 1..self.length - 1
       for j in (self.length - 1).downto(i)
-        if (self[j] <=> self[j - 1]) == -1
+        if (self[j] < self[j - 1])
           x = self[j - 1]
           self[j - 1] = self[j]
           self[j] = x
@@ -113,7 +113,7 @@ class Array
     (0..self.length - 2).each do |i|
       min = i
       (i + 1..self.length - 1).each do |j|
-        if (self[j] <=> self[min]) == -1
+        if (self[j] < self[min])
           min = j
         end
       end
