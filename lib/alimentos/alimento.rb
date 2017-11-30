@@ -94,6 +94,7 @@ class GAlimento < Alimento
 end
 
 class Array
+  # Realiza una ordenacion de un array con el algoritmo bubblesort utilizando for
   def ordenarFor
     for i in 1..self.length - 1
       for j in (self.length - 1).downto(i)
@@ -107,6 +108,7 @@ class Array
     self
   end
 
+  # Realiza una ordenacion de un array con el algoritmo seleccion utilizando each
   def ordenarEach
     (0..self.length - 2).each do |i|
       min = i
