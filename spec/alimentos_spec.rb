@@ -234,23 +234,31 @@ RSpec.describe Alimentos do
   end
 
   describe "# Pruebas ordenacion" do
-    it "Prueba sort" do
-      expect(@array.sort).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
-        @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
-        @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
-        @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
-    end
-    it "Prueba for" do
-      expect(@array.ordenarFor).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
-        @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
-        @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
-        @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
-    end
-    it "Prueba each" do
-      expect(@array.ordenarEach).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
-        @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
-        @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
-        @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
+    Benchmark.bm do |x|
+      it "Prueba sort" do
+        x.report("sort:") {
+          expect(@array.sort).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
+          @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
+          @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
+          @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
+        }
+      end
+      it "Prueba for" do
+        x.report("for:") {
+          expect(@array.ordenarFor).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
+          @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
+          @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
+          @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
+        }
+      end
+      it "Prueba each" do
+        x.report("each:") {
+          expect(@array.ordenarEach).to eq([@tomateG, @calabazaG, @cebollaG, @manzanaG,
+          @perasG, @lecheVacaG, @yogurtG, @papasG, @bacalaoG, @platanosG,
+          @terneraG, @polloG, @cerdoG, @salmonG, @atunG, @huevoFritoG, @lentejasG,
+          @arrozG, @azucarG, @chocolateG, @mantequillaG, @aceiteOlivaG])
+        }
+      end
     end
   end
 
