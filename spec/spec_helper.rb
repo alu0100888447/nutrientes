@@ -1,7 +1,11 @@
+require "coveralls"
+Coveralls.wear!
 require "bundler/setup"
 require "alimentos"
 require "./lib/alimentos/alimento"
 require "./lib/alimentos/lista"
+require 'benchmark'
+require 'bigdecimal/math'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

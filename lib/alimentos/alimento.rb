@@ -106,4 +106,19 @@ class Array
     end
     self
   end
+
+  def ordenarEach
+    (0..self.length - 2).each do |i|
+      min = i
+      (i + 1..self.length - 1).each do |j|
+        if (self[j] <=> self[min]) == -1
+          min = j
+        end
+      end
+      x = self[min]
+      self[min] = self[i]
+      self[i] = x
+    end
+    self
+  end
 end
